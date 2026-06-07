@@ -1,0 +1,231 @@
+@import "tailwindcss";
+
+/* =========================
+   GLOBAL THEME
+========================= */
+
+:root {
+  --bg: #020617;
+  --surface: #0f172a;
+  --surface-light: #1e293b;
+
+  --text: #cbd5e1;
+  --heading: #f8fafc;
+
+  --primary: #3b82f6;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  --border: rgba(255, 255, 255, 0.08);
+
+  --shadow:
+    0 10px 25px rgba(0, 0, 0, 0.25);
+
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+  color-scheme: dark;
+}
+
+/* =========================
+   BODY
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(59, 130, 246, 0.15),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(168, 85, 247, 0.15),
+      transparent 35%
+    ),
+    var(--bg);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================
+   ROOT
+========================= */
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: rgba(59, 130, 246, 0.35);
+  color: white;
+}
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass {
+  background: rgba(15, 23, 42, 0.7);
+
+  backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: var(--shadow);
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-floatUp {
+  animation: floatUp 0.5s ease;
+}
+
+/* =========================
+   HOVER EFFECTS
+========================= */
+
+.hover-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+input,
+textarea,
+select {
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* =========================
+   BUTTON ANIMATION
+========================= */
+
+button {
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
